@@ -1,5 +1,7 @@
 {
   "dependencies": {
+    "com.flexus.serialization": "https://github.com/Idegeron/Flexus-Serialization.git",
+    "com.flexus.triinspector": "https://github.com/Idegeron/Flexus-Tri-Inspector.git",
     "com.srcnalt.openai-unity": "https://github.com/srcnalt/OpenAI-Unity.git",
     "com.unity.collab-proxy": "2.8.2",
     "com.unity.feature.development": "1.0.1",
