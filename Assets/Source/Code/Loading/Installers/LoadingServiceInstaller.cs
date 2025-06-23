@@ -11,7 +11,7 @@ public class LoadingServiceInstaller : IInstaller
     public void Install(IContainerBuilder builder)
     {
         builder.RegisterEntryPoint<LoadingService>()
-            .AsImplementedInterfaces()
+            .As<ILoadingService>()
             .WithParameter("loadingConfig", _loadingConfig);
     }
 }

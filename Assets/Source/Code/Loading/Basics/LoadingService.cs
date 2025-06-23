@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using Cysharp.Threading.Tasks;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using VContainer;
 
@@ -22,14 +23,12 @@ public class LoadingService : ILoadingService
 
         var startScenesCount = SceneManager.sceneCount;
             
-        var scene = SceneManager.LoadScene(sceneName, new LoadSceneParameters(LoadSceneMode.Additive));
+        SceneManager.LoadScene(sceneName, new LoadSceneParameters(LoadSceneMode.Single));
             
         while (SceneManager.loadedSceneCount == startScenesCount)
         {
             await UniTask.Yield();
         }
-
-        SceneManager.SetActiveScene(scene);
             
         return true;
     }
