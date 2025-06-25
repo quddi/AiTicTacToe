@@ -1,12 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using OpenAI;
+﻿using System.Collections.Generic;
 using TriInspector;
 using UnityEditor;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Configs/Loading/Loading Config", fileName = "Loading config")]
+[CreateAssetMenu(menuName = "Configs/Loading Config", fileName = "Loading config")]
 public class LoadingConfig : ScriptableObject
 {
 #if UNITY_EDITOR

@@ -5,16 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a4b4149c-6564-4fa6-b1ae-57c55a4ae73a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/Other/Bootstraper.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/Other/Bootstraper.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/Other/CustomScope.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/Other/CustomScope.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/Teams.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/Teams/Basics.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/Teams/Basics/ITeamsManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/Teams/Basics/ITeamsManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/Teams/Basics/TeamData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/Teams/Basics/TeamData.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/Teams/Basics/TeamsConfig.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/Teams/Basics/TeamsConfig.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/Teams/Basics/TeamsManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/Teams/Basics/TeamsManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/Teams/Basics/TeamsManagerInstaller.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/Teams/Basics/TeamsManagerInstaller.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AiTicTacToe/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AiTicTacToe/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Code/Loading/Basics/LoadingService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Code/Loading/Basics/LoadingService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Code/Loading/Installers/LoadingServiceInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Code/Loading/Installers/LoadingServiceInstaller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Scenes/Bootstrap.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scenes/Bootstrap.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Code/Loading/Basics/LoadingConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Code/Loading/Basics/LoadingConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Code/Loading/Installers.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Code/Loading/Installers/LoadingServiceInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Code/Loading/Basics/LoadingServiceInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Code/Loading/Installers/LoadingServiceInstaller.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Code/Loading/Basics/LoadingServiceInstaller.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Scenes/Gameplay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scenes/Gameplay.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/VectorGraphics/tictactoe.ai" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/VectorGraphics/tictactoe.ai" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,6 +114,8 @@
       <updated>1750621422578</updated>
       <workItem from="1750621425532" duration="868000" />
       <workItem from="1750661279561" duration="2474000" />
+      <workItem from="1750706955980" duration="85000" />
+      <workItem from="1750873012555" duration="916000" />
     </task>
     <servers />
   </component>
