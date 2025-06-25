@@ -7,32 +7,35 @@ using UnityEngine;
 public class LoadingConfig : ScriptableObject
 {
 #if UNITY_EDITOR
-    [field: Dropdown(nameof(GetAllSceneNames)), Tooltip("Fill scene names first!")]
+    [field: Dropdown(nameof(AllSceneNames)), Tooltip("Fill scene names first!")]
 #endif
     [field: SerializeField] public string GameSceneName { get; set; }
 
 #if UNITY_EDITOR
-    public static List<string> GetAllSceneNames()
+    public static List<string> AllSceneNames
     {
-        var sceneNames = new List<string>();
-
-        var scenes = EditorBuildSettings.scenes;
-
-        foreach (var scene in scenes)
+        get
         {
-            if (scene == null) continue;
+            var sceneNames = new List<string>();
 
-            var path = scene.path;
+            var scenes = EditorBuildSettings.scenes;
 
-            var sceneName = System.IO.Path.GetFileNameWithoutExtension(path);
-
-            if (!string.IsNullOrEmpty(sceneName))
+            foreach (var scene in scenes)
             {
-                sceneNames.Add(sceneName);
-            }
-        }
+                if (scene == null) continue;
 
-        return sceneNames;
+                var path = scene.path;
+
+                var sceneName = System.IO.Path.GetFileNameWithoutExtension(path);
+
+                if (!string.IsNullOrEmpty(sceneName))
+                {
+                    sceneNames.Add(sceneName);
+                }
+            }
+
+            return sceneNames;
+        }
     }
 #endif
 }

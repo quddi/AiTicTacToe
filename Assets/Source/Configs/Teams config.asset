@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60fecea6f8b147a7bf9cb5701d162a11, type: 3}
   m_Name: Teams config
   m_EditorClassIdentifier: 
-  <TeamDatas>k__BackingField: []
+  <TeamDatas>k__BackingField:
+  - {fileID: 11400000, guid: cd826027cfa96a54ea7065bc610c2d7f, type: 2}
+  - {fileID: 11400000, guid: ff98281b041843c45abbeaeb033c11c2, type: 2}
