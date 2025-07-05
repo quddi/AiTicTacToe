@@ -44,6 +44,7 @@ public class GameplayController : MonoBehaviour
         }
         
         CurrentTurnTeam = _turnsLoop[0];
+        GameResult = GameResult.None;
         
         FieldUpdated?.Invoke();
         TurnPassed?.Invoke();

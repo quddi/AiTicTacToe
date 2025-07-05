@@ -86,15 +86,22 @@ public class TurnView : MonoBehaviour
         _restartButton.gameObject.SetActive(gameEnded);
     }
 
+    private void RestartButtonClickedHandler()
+    {
+        _gameplayController.Restart();
+    }
+
     private void OnEnable()
     {
         _gameplayController.TurnPassed += TurnPassedHandler;
         _gameplayController.FieldUpdated += FieldUpdatedHandler;
+        _restartButton.onClick.AddListener(RestartButtonClickedHandler);
     }
 
     private void OnDisable()
     {
         _gameplayController.TurnPassed -= TurnPassedHandler;
         _gameplayController.FieldUpdated -= FieldUpdatedHandler;
+        _restartButton.onClick.RemoveListener(RestartButtonClickedHandler);
     }
 }
