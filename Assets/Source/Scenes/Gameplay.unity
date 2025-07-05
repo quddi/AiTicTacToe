@@ -1613,6 +1613,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47621c548b00421fbceeb293567c1652, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gameRules:
+    rid: 4142873074869731328
+  references:
+    version: 2
+    RefIds:
+    - rid: 4142873074869731328
+      type: {class: DefaultSquareGameRules, ns: , asm: Assembly-CSharp}
+      data: 
 --- !u!1 &1256548458
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,9 +7,12 @@ using VContainer;
 
 public class GameplayController : MonoBehaviour
 {
+    [SerializeReference] private IGameRules _gameRules;
+    
     private ITeamsManager _teamsManager;
     private List<string> _turnsLoop;
     
+    public bool GameEnded { get; private set; }
     public string CurrentTurnTeam { get; private set; }
     public FieldCell[,] Field { get; private set; }
     
@@ -50,18 +53,22 @@ public class GameplayController : MonoBehaviour
         
         TurnPassed?.Invoke();
     }
-
+    
     [Button]
     public void MakeTurn(int x, int y)
     {
-        if (!Field[x, y].IsEmpty)
-            throw new Exception($"Cell ({x}, {y}) is not empty");
+        if (!Field[x, y].IsEmpty) throw new Exception($"Cell ({x}, {y}) is not empty");
+        
+        if (GameEnded) throw new Exception("Game is ended");
         
         Field[x, y].TeamId = CurrentTurnTeam;
+
+        GameEnded = _gameRules.EstimateGameEnd(Field);
         
-        CellUpdated?.Invoke(x, y);
+        FieldUpdated?.Invoke();
         
-        PassTurn();
+        if (!GameEnded) 
+            PassTurn();
     }
 
     [Button]
