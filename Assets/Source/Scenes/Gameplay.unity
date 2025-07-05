@@ -577,10 +577,12 @@ MonoBehaviour:
   _winningColor: {r: 0.54901963, g: 0.7764706, b: 0.24705882, a: 1}
   _drawColor: {r: 0.5411765, g: 0.39607844, b: 0.24313726, a: 1}
   _drawIcon: {fileID: 21300000, guid: 0367cc9175452904f89d1398016a5d74, type: 3}
-  _gameplayController: {fileID: 1176429918}
   _teamIcon: {fileID: 623710307}
   _background: {fileID: 431569764}
   _title: {fileID: 955110289}
+  _restartButton: {fileID: 1950574718}
+  _waitingAnimation: {fileID: 2020819822}
+  _gameplayController: {fileID: 1176429918}
 --- !u!1 &451305772
 GameObject:
   m_ObjectHideFlags: 0

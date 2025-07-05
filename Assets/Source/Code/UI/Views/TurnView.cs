@@ -9,10 +9,13 @@ public class TurnView : MonoBehaviour
     [SerializeField] private Color _winningColor;
     [SerializeField] private Color _drawColor;
     [SerializeField] private Sprite _drawIcon;
-    [SerializeField] private GameplayController _gameplayController;
     [SerializeField] private Image _teamIcon;
     [SerializeField] private Image _background;
     [SerializeField] private TMP_Text _title;
+    [SerializeField] private Button _restartButton;
+    [SerializeField] private GameObject _waitingAnimation;
+    
+    [SerializeField] private GameplayController _gameplayController;
     
     private ITeamsManager _teamsManager;
 
@@ -27,6 +30,7 @@ public class TurnView : MonoBehaviour
         UpdateTeamIcon();
         UpdateBackgroundColor();
         UpdateTitle();
+        UpdateWaiting();
     }
 
     private void UpdateTeamIcon()
@@ -71,6 +75,15 @@ public class TurnView : MonoBehaviour
         UpdateBackgroundColor();
         UpdateTeamIcon();
         UpdateTitle();
+        UpdateWaiting();
+    }
+
+    private void UpdateWaiting()
+    {
+        var gameEnded = _gameplayController.GameResult != GameResult.None;
+        
+        _waitingAnimation.SetActive(!gameEnded);
+        _restartButton.gameObject.SetActive(gameEnded);
     }
 
     private void OnEnable()
