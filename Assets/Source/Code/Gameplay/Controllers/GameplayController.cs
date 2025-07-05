@@ -12,7 +12,7 @@ public class GameplayController : MonoBehaviour
     private ITeamsManager _teamsManager;
     private List<string> _turnsLoop;
     
-    public bool GameEnded { get; private set; }
+    public GameResult GameResult { get; private set; }
     public string CurrentTurnTeam { get; private set; }
     public FieldCell[,] Field { get; private set; }
     
@@ -59,15 +59,15 @@ public class GameplayController : MonoBehaviour
     {
         if (!Field[x, y].IsEmpty) throw new Exception($"Cell ({x}, {y}) is not empty");
         
-        if (GameEnded) throw new Exception("Game is ended");
+        if (GameResult != GameResult.None) throw new Exception("Game is ended");
         
         Field[x, y].TeamId = CurrentTurnTeam;
 
-        GameEnded = _gameRules.EstimateGameEnd(Field);
+        GameResult = _gameRules.EstimateGameEnd(Field);
         
         FieldUpdated?.Invoke();
         
-        if (!GameEnded) 
+        if (GameResult == GameResult.None) 
             PassTurn();
     }
 

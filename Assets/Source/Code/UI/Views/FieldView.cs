@@ -48,7 +48,7 @@ public class FieldView : MonoBehaviour
 
     private void CellViewClickedHandler(int x, int y)
     {
-        if (_gameplayController.Field[x, y].IsEmpty && !_gameplayController.GameEnded)
+        if (_gameplayController.Field[x, y].IsEmpty && _gameplayController.GameResult == GameResult.None)
             _gameplayController.MakeTurn(x, y);
     }
 

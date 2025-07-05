@@ -1,4 +1,4 @@
 public interface IGameRules
 {
-    bool EstimateGameEnd(FieldCell[,] field);
+    GameResult EstimateGameEnd(FieldCell[,] field);
 }

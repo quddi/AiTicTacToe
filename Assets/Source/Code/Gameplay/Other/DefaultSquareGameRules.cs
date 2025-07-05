@@ -3,7 +3,7 @@ using System;
 [Serializable]
 public class DefaultSquareGameRules : IGameRules
 {
-    public bool EstimateGameEnd(FieldCell[,] field)
+    public GameResult EstimateGameEnd(FieldCell[,] field)
     {
         if (field.GetLength(0) != field.GetLength(1))
             throw new ArgumentException($"Field must be square, but length were {field.GetLength(0)} and {field.GetLength(1)}");
@@ -12,7 +12,23 @@ public class DefaultSquareGameRules : IGameRules
         EstimateVertical(field);
         EstimateDiagonal(field);
         
-        return IsGameEnded(field);
+        var anyWin = false;
+        var allFilled = true;
+        
+        for (int i = 0; i < field.GetLength(0); i++)
+        {
+            for (int j = 0; j < field.GetLength(1); j++)
+            {
+                anyWin = anyWin || field[i, j].IsWinning;
+                allFilled = allFilled && !field[i, j].IsEmpty;
+            }
+        }
+
+        return anyWin 
+            ? GameResult.Win 
+            : allFilled 
+                ? GameResult.Draw 
+                : GameResult.None;
     }
 
     private void EstimateHorizontal(FieldCell[,] field)
@@ -100,22 +116,5 @@ public class DefaultSquareGameRules : IGameRules
     private bool AreSameTeamCells(FieldCell cell1, FieldCell cell2)
     {
         return cell1.TeamId == cell2.TeamId && !cell1.IsEmpty && !cell2.IsEmpty;
-    }
-
-    private bool IsGameEnded(FieldCell[,] field)
-    {
-        var anyWin = false;
-        var allFilled = true;
-        
-        for (int i = 0; i < field.GetLength(0); i++)
-        {
-            for (int j = 0; j < field.GetLength(1); j++)
-            {
-                anyWin = anyWin || field[i, j].IsWinning;
-                allFilled = allFilled && !field[i, j].IsEmpty;
-            }
-        }
-
-        return anyWin || allFilled;
     }
 }
