@@ -2121,6 +2121,7 @@ MonoBehaviour:
   autoInjectGameObjects:
   - {fileID: 2147321086}
   - {fileID: 451305772}
+  - {fileID: 1545890977}
   _installers: []
   references:
     version: 2

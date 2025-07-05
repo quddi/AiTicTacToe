@@ -1,14 +1,30 @@
 using System;
+using System.Collections.Generic;
 using TriInspector;
 using UnityEngine;
 using UnityEngine.UIElements;
+using VContainer;
 
 public class GameplayController : MonoBehaviour
 {
+    private ITeamsManager _teamsManager;
+    private List<string> _turnsLoop;
+    
+    public string CurrentTurnTeam { get; private set; }
     public FieldCell[,] Field { get; private set; }
-
+    
     public event Action FieldUpdated;
+    public event Action TurnPassed;
     public event Action<int, int> CellUpdated;
+
+    [Inject]
+    private void Construct(ITeamsManager teamsManager)
+    {
+        _teamsManager = teamsManager;
+        _turnsLoop = _teamsManager.TurnsLoop;
+
+        CurrentTurnTeam = _turnsLoop[0];
+    }
     
     private void Awake()
     {
@@ -26,6 +42,26 @@ public class GameplayController : MonoBehaviour
     private void Start()
     {
         FieldUpdated?.Invoke();
+    }
+
+    private void PassTurn()
+    {
+        CurrentTurnTeam = _turnsLoop[(_turnsLoop.IndexOf(CurrentTurnTeam) + 1) % _turnsLoop.Count];
+        
+        TurnPassed?.Invoke();
+    }
+
+    [Button]
+    public void MakeTurn(int x, int y)
+    {
+        if (!Field[x, y].IsEmpty)
+            throw new Exception($"Cell ({x}, {y}) is not empty");
+        
+        Field[x, y].TeamId = CurrentTurnTeam;
+        
+        CellUpdated?.Invoke(x, y);
+        
+        PassTurn();
     }
 
     [Button]

@@ -6,7 +6,9 @@ public class TeamsManager : ITeamsManager
 {
     private TeamsConfig _teamsConfig;
     private Dictionary<string, TeamData> _teamDatas;
-    
+
+    public List<string> TurnsLoop => _teamDatas.Keys.ToList();
+
     [Inject]
     private void Construct(TeamsConfig teamsConfig)
     {
