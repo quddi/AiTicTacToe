@@ -38,16 +38,23 @@ public class FieldView : MonoBehaviour
         var cell = _gameplayController.Field[x, y];
         var cellView = _field[x, y];
         
-        cellView.SetTeamIcon(cell.TeamId);
+        cellView.UpdateState(cell);
+    }
+
+    private void CellUpdatedHandler(int x, int y)
+    {
+        UpdateCellView(x, y);
     }
 
     private void OnEnable()
     {
         _gameplayController.FieldUpdated += FieldUpdatedHandler;   
+        _gameplayController.CellUpdated += CellUpdatedHandler;
     }
 
     private void OnDisable()
     {
         _gameplayController.FieldUpdated -= FieldUpdatedHandler;   
+        _gameplayController.CellUpdated -= CellUpdatedHandler;
     }
 }

@@ -1,11 +1,14 @@
 using System;
+using TriInspector;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class GameplayController : MonoBehaviour
 {
     public FieldCell[,] Field { get; private set; }
 
     public event Action FieldUpdated;
+    public event Action<int, int> CellUpdated;
     
     private void Awake()
     {
@@ -23,5 +26,14 @@ public class GameplayController : MonoBehaviour
     private void Start()
     {
         FieldUpdated?.Invoke();
+    }
+
+    [Button]
+    private void SetCellState(int x, int y, string teamId, bool isWinning)
+    {
+        Field[x, y].TeamId = teamId;
+        Field[x, y].IsWinning = isWinning;
+        
+        CellUpdated?.Invoke(x, y);
     }
 }

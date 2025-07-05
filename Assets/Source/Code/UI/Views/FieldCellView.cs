@@ -5,7 +5,11 @@ using Image = UnityEngine.UI.Image;
 
 public class FieldCellView : MonoBehaviour
 {
+    [SerializeField] private Color _filledColor;
+    [SerializeField] private Color _emptyColor;
+    [SerializeField] private Color _winningColor;
     [SerializeField] private Image _icon;
+    [SerializeField] private Image _background;
     
     private ITeamsManager _teamsManager;
 
@@ -15,15 +19,16 @@ public class FieldCellView : MonoBehaviour
         _teamsManager = teamsManager;
     }
     
-    public void SetTeamIcon(string teamId)
+    public void UpdateState(FieldCell cell)
     {
-        var isEmpty = string.IsNullOrEmpty(teamId);
+        _icon.gameObject.SetActive(!cell.IsEmpty);
+
+        if (cell.IsEmpty) _background.color = _emptyColor;
+        else _background.color = cell.IsWinning ? _winningColor : _filledColor;
         
-        _icon.gameObject.SetActive(!isEmpty);
+        if (cell.IsEmpty) return;
         
-        if (isEmpty) return;
-        
-        var data = _teamsManager.GetTeamData(teamId);
+        var data = _teamsManager.GetTeamData(cell.TeamId);
         
         _icon.sprite = data.SmallIcon;
     }
