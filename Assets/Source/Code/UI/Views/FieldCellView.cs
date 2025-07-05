@@ -30,6 +30,6 @@ public class FieldCellView : MonoBehaviour
         
         var data = _teamsManager.GetTeamData(cell.TeamId);
         
-        _icon.sprite = data.SmallIcon;
+        _icon.sprite = data.Icon;
     }
 }
