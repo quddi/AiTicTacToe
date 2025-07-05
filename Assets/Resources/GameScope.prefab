@@ -51,9 +51,13 @@ MonoBehaviour:
   _installers:
   - rid: 4750721990582075392
   - rid: 4750722045908353024
+  - rid: 4142873074869731329
   references:
     version: 2
     RefIds:
+    - rid: 4142873074869731329
+      type: {class: ResultsManagerInstaller, ns: , asm: Assembly-CSharp}
+      data: 
     - rid: 4750721990582075392
       type: {class: LoadingServiceInstaller, ns: , asm: Assembly-CSharp}
       data:

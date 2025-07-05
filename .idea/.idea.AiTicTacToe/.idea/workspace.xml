@@ -5,16 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a4b4149c-6564-4fa6-b1ae-57c55a4ae73a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/Gameplay/Other/GameResult.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/Results/Basics/GameResultInfo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/Results/Basics/IResultsManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/Results/Basics/ResultsManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/Results/Basics/ResultsManagerInstaller.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AiTicTacToe/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AiTicTacToe/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/GameScope.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/GameScope.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Source/Code/Gameplay/Controllers/GameplayController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Code/Gameplay/Controllers/GameplayController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Code/Gameplay/Other/DefaultSquareGameRules.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Code/Gameplay/Other/DefaultSquareGameRules.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Code/Gameplay/Other/IGameRules.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Code/Gameplay/Other/IGameRules.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Code/UI/Views/FieldView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Code/UI/Views/FieldView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Code/UI/Views/TurnView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Code/UI/Views/TurnView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Scenes/Gameplay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scenes/Gameplay.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Sprites/UI/1x/TurnBackground.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Sprites/UI/1x/TurnBackground.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Sprites/UI/1x/TurnTitle.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Sprites/UI/1x/TurnTitle.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Code/Gameplay/Other/GameResult.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Code/Results/Basics/GameResult.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Code/UI/Views/TeamView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Code/UI/Views/TeamView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Fonts/MPLUSRounded1c-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Fonts/MPLUSRounded1c-Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Prefabs/UI/PlayerInfo.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Prefabs/UI/PlayerInfo.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +109,7 @@
       <workItem from="1750661279561" duration="2474000" />
       <workItem from="1750706955980" duration="85000" />
       <workItem from="1750873012555" duration="3332000" />
-      <workItem from="1751698792293" duration="7925000" />
+      <workItem from="1751698792293" duration="10662000" />
     </task>
     <servers />
   </component>

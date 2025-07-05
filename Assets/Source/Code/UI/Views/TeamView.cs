@@ -1,3 +1,5 @@
+using System;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,20 +9,47 @@ public class TeamView : MonoBehaviour
 {
     [SerializeField] private Image _teamIcon;
     [SerializeField] private TMP_Text _teamNick;
+    [SerializeField] private TMP_Text _winsText;
     
     private ITeamsManager _teamsManager;
+    private IResultsManager _resultsManager;
+    private string _teamId;
 
     [Inject]
-    private void Construct(ITeamsManager teamsManager)
+    private void Construct(ITeamsManager teamsManager, IResultsManager resultsManager)
     {
+        _resultsManager = resultsManager;
         _teamsManager = teamsManager;
+        
+        UpdateWins();
+        
+        _resultsManager.ResultAdded += GameResultAddedHandler;
     }
-    
+
     public void SetTeam(string teamId)
     {
-        var data = _teamsManager.GetTeamData(teamId);
+        _teamId = teamId;
+        
+        var data = _teamsManager.GetTeamData(_teamId);
         
         _teamIcon.sprite = data.SmallIcon;
         _teamNick.text = data.Nick;
+    }
+
+    private void GameResultAddedHandler(GameResultInfo resultInfo)
+    {
+        UpdateWins();
+    }
+
+    private void UpdateWins()
+    {
+        var wins = _resultsManager.Results.Count(result => result.WinnerId == _teamId && result.Result == GameResult.Win);
+
+        _winsText.text = $"{wins} wins";
+    }
+
+    private void OnDestroy()
+    {
+        if (_resultsManager != null) _resultsManager.ResultAdded -= GameResultAddedHandler;
     }
 }

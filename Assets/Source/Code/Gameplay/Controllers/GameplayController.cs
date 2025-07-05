@@ -10,8 +10,9 @@ public class GameplayController : MonoBehaviour
     [SerializeReference] private IGameRules _gameRules;
     
     private ITeamsManager _teamsManager;
+    private IResultsManager _resultsManager;
     private List<string> _turnsLoop;
-    
+
     public GameResult GameResult { get; private set; }
     public string CurrentTurnTeam { get; private set; }
     public FieldCell[,] Field { get; private set; }
@@ -21,8 +22,9 @@ public class GameplayController : MonoBehaviour
     public event Action<int, int> CellUpdated;
 
     [Inject]
-    private void Construct(ITeamsManager teamsManager)
+    private void Construct(ITeamsManager teamsManager, IResultsManager resultsManager)
     {
+        _resultsManager = resultsManager;
         _teamsManager = teamsManager;
         _turnsLoop = _teamsManager.TurnsLoop;
 
@@ -64,6 +66,13 @@ public class GameplayController : MonoBehaviour
         Field[x, y].TeamId = CurrentTurnTeam;
 
         GameResult = _gameRules.EstimateGameEnd(Field);
+
+        if (GameResult != GameResult.None)
+        {
+            var winnerId = GameResult == GameResult.Win ? CurrentTurnTeam : null;
+            
+            _resultsManager.AddResult(new GameResultInfo { WinnerId = winnerId, Result = GameResult });
+        }
         
         FieldUpdated?.Invoke();
         

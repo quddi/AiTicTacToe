@@ -198,6 +198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _teamIcon: {fileID: 1190817471957197238}
   _teamNick: {fileID: 5439372369299669960}
+  _winsText: {fileID: 4474517401462729870}
 --- !u!114 &7673720655307427638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -391,7 +392,7 @@ GameObject:
   - component: {fileID: 2444639962968858169}
   - component: {fileID: 4474517401462729870}
   m_Layer: 5
-  m_Name: WonsText
+  m_Name: WinsText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -444,7 +445,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 10 wons
+  m_text: 10 wins
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 03f096eafd5bdcd4bb8c26974d9160ce, type: 2}
   m_sharedMaterial: {fileID: 3422027277864640715, guid: 03f096eafd5bdcd4bb8c26974d9160ce, type: 2}
@@ -471,7 +472,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 29.8
+  m_fontSize: 31.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
