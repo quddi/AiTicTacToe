@@ -28,10 +28,10 @@ public class GameplayController : MonoBehaviour
         _teamsManager = teamsManager;
         _turnsLoop = _teamsManager.TurnsLoop;
 
-        CurrentTurnTeam = _turnsLoop[0];
+        Restart();
     }
-    
-    private void Awake()
+
+    public void Restart()
     {
         Field = new FieldCell[Constants.FieldDimension, Constants.FieldDimension];
 
@@ -42,6 +42,11 @@ public class GameplayController : MonoBehaviour
                 Field[i, j] = new FieldCell(i, j);
             }
         }
+        
+        CurrentTurnTeam = _turnsLoop[0];
+        
+        FieldUpdated?.Invoke();
+        TurnPassed?.Invoke();
     }
 
     private void Start()
