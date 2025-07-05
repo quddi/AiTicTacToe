@@ -4,39 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4b4149c-6564-4fa6-b1ae-57c55a4ae73a" name="Changes" comment="Teams service">
-      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/Gameplay/Controllers/TeamsController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/UI/Views/TeamView.cs" afterDir="false" />
+    <list default="true" id="a4b4149c-6564-4fa6-b1ae-57c55a4ae73a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/Gameplay/Controllers/GameplayController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/Gameplay/Other/FieldCell.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/Other/Constants.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/UI/Views/FieldCellView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/UI/Views/FieldView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AiTicTacToe/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AiTicTacToe/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Code/Loading/Basics/LoadingConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Code/Loading/Basics/LoadingConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Code/Teams/Basics/TeamData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Code/Teams/Basics/TeamData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Code/Teams/Basics/TeamsConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Code/Teams/Basics/TeamsConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Configs/Teams config.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Configs/Teams config.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Prefabs/UI/PlayerInfo.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Prefabs/UI/PlayerInfo.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Scenes/Bootstrap.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scenes/Bootstrap.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Prefabs/UI/FieldCell.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Prefabs/UI/FieldCell.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Source/Scenes/Gameplay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scenes/Gameplay.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Sprites/UI/1x/Ресурс 1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Sprites/UI/1x/Ресурс 1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Sprites/UI/1x/Ресурс 10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Sprites/UI/1x/Ресурс 10.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Sprites/UI/1x/Ресурс 11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Sprites/UI/1x/Ресурс 11.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Sprites/UI/1x/Ресурс 12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Sprites/UI/1x/Ресурс 12.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Sprites/UI/1x/Ресурс 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Sprites/UI/1x/Ресурс 2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Sprites/UI/1x/Ресурс 3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Sprites/UI/1x/Ресурс 3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Sprites/UI/1x/Ресурс 4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Sprites/UI/1x/Ресурс 4.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Sprites/UI/1x/Ресурс 5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Sprites/UI/1x/Ресурс 5.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Sprites/UI/1x/Ресурс 7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Sprites/UI/1x/Ресурс 7.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Sprites/UI/1x/Ресурс 8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Sprites/UI/1x/Ресурс 8.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Sprites/UI/1x/Ресурс 9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Sprites/UI/1x/Ресурс 9.png.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +105,8 @@
       <workItem from="1750621425532" duration="868000" />
       <workItem from="1750661279561" duration="2474000" />
       <workItem from="1750706955980" duration="85000" />
-      <workItem from="1750873012555" duration="2638000" />
+      <workItem from="1750873012555" duration="3332000" />
+      <workItem from="1751698792293" duration="1695000" />
     </task>
     <servers />
   </component>
