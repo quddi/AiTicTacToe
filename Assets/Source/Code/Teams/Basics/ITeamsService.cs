@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-public interface ITeamsManager
+public interface ITeamsService
 {
     List<string> TurnsLoop { get; }
     

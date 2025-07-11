@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using VContainer;
 
-public class TeamsManager : ITeamsManager
+public class TeamsService : ITeamsService
 {
     private TeamsConfig _teamsConfig;
     private Dictionary<string, TeamData> _teamDatas;

@@ -4,14 +4,14 @@ using VContainer;
 using VContainer.Unity;
 
 [Serializable]
-public class TeamsManagerInstaller : IInstaller
+public class TeamsServiceInstaller : IInstaller
 {
     [SerializeField] private TeamsConfig _teamsConfig;
     
     public void Install(IContainerBuilder builder)
     {
-        builder.RegisterEntryPoint<TeamsManager>()
-            .As<ITeamsManager>()
+        builder.RegisterEntryPoint<TeamsService>()
+            .As<ITeamsService>()
             .WithParameter("teamsConfig", _teamsConfig);
     }
 }

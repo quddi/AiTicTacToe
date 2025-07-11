@@ -11,15 +11,15 @@ public class TeamView : MonoBehaviour
     [SerializeField] private TMP_Text _teamNick;
     [SerializeField] private TMP_Text _winsText;
     
-    private ITeamsManager _teamsManager;
+    private ITeamsService _teamsService;
     private IResultsManager _resultsManager;
     private string _teamId;
 
     [Inject]
-    private void Construct(ITeamsManager teamsManager, IResultsManager resultsManager)
+    private void Construct(ITeamsService teamsService, IResultsManager resultsManager)
     {
         _resultsManager = resultsManager;
-        _teamsManager = teamsManager;
+        _teamsService = teamsService;
         
         UpdateWins();
         
@@ -30,7 +30,7 @@ public class TeamView : MonoBehaviour
     {
         _teamId = teamId;
         
-        var data = _teamsManager.GetTeamData(_teamId);
+        var data = _teamsService.GetTeamData(_teamId);
         
         _teamIcon.sprite = data.SmallIcon;
         _teamNick.text = data.Nick;

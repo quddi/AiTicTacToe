@@ -9,7 +9,7 @@ public class GameplayController : MonoBehaviour
 {
     [SerializeReference] private IGameRules _gameRules;
     
-    private ITeamsManager _teamsManager;
+    private ITeamsService _teamsService;
     private IResultsManager _resultsManager;
     private List<string> _turnsLoop;
 
@@ -22,11 +22,11 @@ public class GameplayController : MonoBehaviour
     public event Action<int, int> CellUpdated;
 
     [Inject]
-    private void Construct(ITeamsManager teamsManager, IResultsManager resultsManager)
+    private void Construct(ITeamsService teamsService, IResultsManager resultsManager)
     {
         _resultsManager = resultsManager;
-        _teamsManager = teamsManager;
-        _turnsLoop = _teamsManager.TurnsLoop;
+        _teamsService = teamsService;
+        _turnsLoop = _teamsService.TurnsLoop;
 
         Restart();
     }

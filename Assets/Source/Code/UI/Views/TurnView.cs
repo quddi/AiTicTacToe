@@ -17,12 +17,12 @@ public class TurnView : MonoBehaviour
     
     [SerializeField] private GameplayController _gameplayController;
     
-    private ITeamsManager _teamsManager;
+    private ITeamsService _teamsService;
 
     [Inject]
-    private void Construct(ITeamsManager teamsManager)
+    private void Construct(ITeamsService teamsService)
     {
-        _teamsManager = teamsManager;
+        _teamsService = teamsService;
     }
 
     private void Start()
@@ -41,7 +41,7 @@ public class TurnView : MonoBehaviour
             return;
         }
         
-        var data = _teamsManager.GetTeamData(_gameplayController.CurrentTurnTeam);
+        var data = _teamsService.GetTeamData(_gameplayController.CurrentTurnTeam);
         
         _teamIcon.sprite = data.Icon;
     }

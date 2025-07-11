@@ -50,7 +50,7 @@ MonoBehaviour:
   autoInjectGameObjects: []
   _installers:
   - rid: 4750721990582075392
-  - rid: 4750722045908353024
+  - rid: 4142873211779153920
   - rid: 4142873074869731329
   references:
     version: 2
@@ -58,11 +58,11 @@ MonoBehaviour:
     - rid: 4142873074869731329
       type: {class: ResultsManagerInstaller, ns: , asm: Assembly-CSharp}
       data: 
+    - rid: 4142873211779153920
+      type: {class: TeamsServiceInstaller, ns: , asm: Assembly-CSharp}
+      data:
+        _teamsConfig: {fileID: 11400000, guid: 53e926f343febe9499758399c1b430d8, type: 2}
     - rid: 4750721990582075392
       type: {class: LoadingServiceInstaller, ns: , asm: Assembly-CSharp}
       data:
         _loadingConfig: {fileID: 11400000, guid: f721b457b9a8a314c87f9a3dbeebede2, type: 2}
-    - rid: 4750722045908353024
-      type: {class: TeamsManagerInstaller, ns: , asm: Assembly-CSharp}
-      data:
-        _teamsConfig: {fileID: 11400000, guid: 53e926f343febe9499758399c1b430d8, type: 2}

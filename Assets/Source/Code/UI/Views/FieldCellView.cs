@@ -14,15 +14,15 @@ public class FieldCellView : MonoBehaviour
     [SerializeField] private Image _background;
     [SerializeField] private Button _button;
     
-    private ITeamsManager _teamsManager;
+    private ITeamsService _teamsService;
     private FieldCell _cell;
 
     public event Action<int, int> Clicked; 
 
     [Inject]
-    private void Construct(ITeamsManager teamsManager)
+    private void Construct(ITeamsService teamsService)
     {
-        _teamsManager = teamsManager;
+        _teamsService = teamsService;
     }
     
     public void UpdateState(FieldCell cell)
@@ -35,7 +35,7 @@ public class FieldCellView : MonoBehaviour
         
         if (cell.IsEmpty) return;
         
-        var data = _teamsManager.GetTeamData(cell.TeamId);
+        var data = _teamsService.GetTeamData(cell.TeamId);
         
         _icon.sprite = data.Icon;
     }

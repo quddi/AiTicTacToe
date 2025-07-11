@@ -5,10 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a4b4149c-6564-4fa6-b1ae-57c55a4ae73a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/Teams/Basics/ITeamsService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/Teams/Basics/TeamsService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/Teams/Basics/TeamsServiceInstaller.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AiTicTacToe/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AiTicTacToe/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Source/Code/Gameplay/Controllers/GameplayController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Code/Gameplay/Controllers/GameplayController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Code/Teams/Basics/ITeamsManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Code/Teams/Basics/ITeamsManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Code/Teams/Basics/TeamsManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Code/Teams/Basics/TeamsManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Code/Teams/Basics/TeamsManagerInstaller.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Code/Teams/Basics/TeamsManagerInstaller.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Code/UI/Views/FieldCellView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Code/UI/Views/FieldCellView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Code/UI/Views/TeamView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Code/UI/Views/TeamView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Source/Code/UI/Views/TurnView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Code/UI/Views/TurnView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/VectorGraphics/tictactoe.ai" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/VectorGraphics/tictactoe.ai" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Fonts/MPLUSRounded1c-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Fonts/MPLUSRounded1c-Bold SDF.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +113,8 @@
       <workItem from="1750661279561" duration="2474000" />
       <workItem from="1750706955980" duration="85000" />
       <workItem from="1750873012555" duration="3332000" />
-      <workItem from="1751698792293" duration="14621000" />
+      <workItem from="1751698792293" duration="14722000" />
+      <workItem from="1752232092112" duration="324000" />
     </task>
     <servers />
   </component>
