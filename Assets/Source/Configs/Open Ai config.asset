@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2ed567e6fa8424aa1f1212031434006, type: 3}
+  m_Name: Open Ai config
+  m_EditorClassIdentifier: 
+  <ApiKey>k__BackingField: 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

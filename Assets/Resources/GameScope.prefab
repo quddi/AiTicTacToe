@@ -52,6 +52,7 @@ MonoBehaviour:
   - rid: 4750721990582075392
   - rid: 4142873211779153920
   - rid: 4142873074869731329
+  - rid: 4142873211779153921
   references:
     version: 2
     RefIds:
@@ -62,6 +63,10 @@ MonoBehaviour:
       type: {class: TeamsServiceInstaller, ns: , asm: Assembly-CSharp}
       data:
         _teamsConfig: {fileID: 11400000, guid: 53e926f343febe9499758399c1b430d8, type: 2}
+    - rid: 4142873211779153921
+      type: {class: OpenAiServiceInstaller, ns: , asm: Assembly-CSharp}
+      data:
+        _openAiConfig: {fileID: 11400000, guid: 5e5ea51eda6f6db4c864d43933e94423, type: 2}
     - rid: 4750721990582075392
       type: {class: LoadingServiceInstaller, ns: , asm: Assembly-CSharp}
       data:
