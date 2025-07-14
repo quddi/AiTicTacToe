@@ -2647,6 +2647,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1545890978}
+  - component: {fileID: 1545890979}
   m_Layer: 0
   m_Name: Controllers
   m_TagString: Untagged
@@ -2671,6 +2672,73 @@ Transform:
   - {fileID: 1176429917}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1545890979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545890977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba275e956cda437294da79cccd23ddc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _string: ' {   "id": "chatcmpl-BtJKvRVPNAyrPxMKs0kCz1vWGzfrN",   "object": "chat.completion",  
+    "created": 1752522069,   "model": "gpt-4o-2024-08-06",   "choices": [     {      
+    "index": 0,       "message": {         "role": "assistant",         "content":
+    null,         "tool_calls": [           {             "id": "call_IFkLJugioQNWtqJ1El24q8tu",            
+    "type": "function",             "function": {               "name": "select_move",              
+    "arguments": "{\"row\":0,\"column\":0}"             }           }         ],        
+    "refusal": null,         "annotations": []       },       "logprobs": null,      
+    "finish_reason": "tool_calls"     }   ],   "usage": {     "prompt_tokens": 185,    
+    "completion_tokens": 18,     "total_tokens": 203,     "prompt_tokens_details":
+    {       "cached_tokens": 0,       "audio_tokens": 0     },     "completion_tokens_details":
+    {       "reasoning_tokens": 0,       "audio_tokens": 0,       "accepted_prediction_tokens":
+    0,       "rejected_prediction_tokens": 0     }   },   "service_tier": "default",  
+    "system_fingerprint": null }'
+  _gameplayController: {fileID: 1176429918}
+  _teamsController: {fileID: 1707816434}
+  _chatResponse:
+    rid: 4142873287842594817
+  references:
+    version: 2
+    RefIds:
+    - rid: 4142873287842594817
+      type: {class: ChatResponse, ns: , asm: Assembly-CSharp}
+      data:
+        id: chatcmpl-BtJKvRVPNAyrPxMKs0kCz1vWGzfrN
+        object: chat.completion
+        created: 1752522069
+        model: gpt-4o-2024-08-06
+        choices:
+        - index: 0
+          message:
+            role: assistant
+            content: 
+            tool_calls:
+            - id: call_IFkLJugioQNWtqJ1El24q8tu
+              type: function
+              function:
+                name: select_move
+                arguments: '{"row":0,"column":0}'
+            refusal: 
+          logprobs: 
+          finish_reason: tool_calls
+        usage:
+          prompt_tokens: 185
+          completion_tokens: 18
+          total_tokens: 203
+          prompt_tokens_details:
+            cached_tokens: 0
+            audio_tokens: 0
+          completion_tokens_details:
+            reasoning_tokens: 0
+            audio_tokens: 0
+            accepted_prediction_tokens: 0
+            rejected_prediction_tokens: 0
+        service_tier: default
+        system_fingerprint: 
 --- !u!1 &1582563997
 GameObject:
   m_ObjectHideFlags: 0

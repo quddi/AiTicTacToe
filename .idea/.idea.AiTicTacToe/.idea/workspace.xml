@@ -4,12 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4b4149c-6564-4fa6-b1ae-57c55a4ae73a" name="Changes" comment="Teams manager to service">
-      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/OpenAi/Basics/IOpenAiService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/OpenAi/Basics/OpenAiConfig.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/OpenAi/Basics/OpenAiService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/OpenAi/Basics/OpenAiServiceInstaller.cs" afterDir="false" />
+    <list default="true" id="a4b4149c-6564-4fa6-b1ae-57c55a4ae73a" name="Changes" comment="Open ai service">
+      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/OpenAi/Specifics/ChatRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/OpenAi/Specifics/ChatResponse.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/OpenAi/Specifics/Choice.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/OpenAi/Specifics/CompletionTokensDetails.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/OpenAi/Specifics/FunctionCall.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/OpenAi/Specifics/Message.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/OpenAi/Specifics/MoveData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/OpenAi/Specifics/PromptTokensDetails.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/OpenAi/Specifics/Tool.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/OpenAi/Specifics/ToolCall.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/OpenAi/Specifics/ToolFunction.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/OpenAi/Specifics/ToolParam.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/OpenAi/Specifics/ToolParameters.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/OpenAi/Specifics/ToolProperties.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/OpenAi/Specifics/Usage.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/Other/Test.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AiTicTacToe/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AiTicTacToe/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Code/OpenAi/Basics/IOpenAiService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Code/OpenAi/Basics/IOpenAiService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Code/OpenAi/Basics/OpenAiConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Code/OpenAi/Basics/OpenAiConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Code/OpenAi/Basics/OpenAiService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Code/OpenAi/Basics/OpenAiService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Configs/Open Ai config.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Configs/Open Ai config.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Scenes/Gameplay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scenes/Gameplay.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +37,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://D:/UnityProjects/Pet/AiTicTacToe/Assets/Source/Code/UI/Views/FieldCellView.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ce006d9cdd7f42a88f73d37c00d20828c400/df/4323abcd/UnityWebRequest.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Source/Code/OpenAi/Specifics/Tool.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Source/Code/OpenAi/Specifics/Usage.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.srcnalt.openai-unity@054467e2a2/Runtime/DataTypes.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/jp.hadashikick.vcontainer@0522be3ef0/Runtime/Unity/LifetimeScope.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -105,7 +125,8 @@
       <workItem from="1750706955980" duration="85000" />
       <workItem from="1750873012555" duration="3332000" />
       <workItem from="1751698792293" duration="14722000" />
-      <workItem from="1752232092112" duration="684000" />
+      <workItem from="1752232092112" duration="6708000" />
+      <workItem from="1752519995913" duration="2161000" />
     </task>
     <task id="LOCAL-00001" summary="Teams manager to service">
       <option name="closed" value="true" />
@@ -115,7 +136,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752232546885</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Open ai service">
+      <option name="closed" value="true" />
+      <created>1752232837971</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1752232837971</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,6 +157,7 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Teams service" />
     <MESSAGE value="Teams manager to service" />
-    <option name="LAST_COMMIT_MESSAGE" value="Teams manager to service" />
+    <MESSAGE value="Open ai service" />
+    <option name="LAST_COMMIT_MESSAGE" value="Open ai service" />
   </component>
 </project>

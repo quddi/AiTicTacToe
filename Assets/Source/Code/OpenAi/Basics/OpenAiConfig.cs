@@ -5,4 +5,10 @@ using UnityEngine.Internal;
 public class OpenAiConfig : ScriptableObject
 {
     [field: SerializeField] public string ApiKey { get; private set; }
+    
+    [field: SerializeField] public string ApiUrl { get; private set; }
+    
+    [field: SerializeField] public string Model { get; private set; }
+    
+    [field: SerializeField] public string ToolChoice { get; private set; }
 }
