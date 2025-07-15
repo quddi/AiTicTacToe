@@ -22,7 +22,7 @@ public class Test : MonoBehaviour
         _openAiService = openAiService;
     }
 
-    [Button]
+    /*[Button]
     private async UniTaskVoid Send()
     {
         var field = await _openAiService.GetMoveAsync(BuildBoardPromptFromField(_gameplayController.Field));
@@ -34,46 +34,9 @@ public class Test : MonoBehaviour
     private void DebugBoard()
     {
         Debug.Log(BuildBoardPromptFromField(_gameplayController.Field));
-    }
+    }*/
     
-    public string BuildBoardPromptFromField(FieldCell[,] field)
-    {
-        var sb = new StringBuilder();
-
-        sb.AppendLine("Ось поточне поле (4x4), де X — твій хід, O — мій. Порожні клітинки — \".\":");
-
-        for (int row = 0; row < 4; row++)
-        {
-            for (int col = 0; col < 4; col++)
-            {
-                var cell = field[row, col];
-
-                char symbol;
-                if (cell.IsEmpty)
-                {
-                    symbol = '.';
-                }
-                else if (cell.TeamId == FirstPlayerId)
-                {
-                    symbol = 'X';
-                }
-                else
-                {
-                    symbol = 'O';
-                }
-
-                sb.Append(symbol);
-
-                if (col < 3) sb.Append(" ");
-            }
-            sb.AppendLine();
-        }
-
-        sb.AppendLine();
-        sb.AppendLine("Я граю за X. Зроби наступний хід. Відповідай у форматі function call (row, column).");
-
-        return sb.ToString();
-    }
+    
 
     [Button]
     private void DeserializeResponse()

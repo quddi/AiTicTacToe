@@ -1,12 +1,16 @@
 using System;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
+using TriInspector;
 using UnityEngine;
 
 public class FieldView : MonoBehaviour
 {
+
     [SerializeField] private GameplayController _gameplayController;
     [SerializeField] private List<FieldCellView> _cellViews = new();
 
+    private bool _isAiTurn;
     private FieldCellView[,] _field;
     
     private void Awake()
@@ -20,6 +24,11 @@ public class FieldView : MonoBehaviour
                 _field[i, j] = _cellViews[i * _field.GetLength(0) + j];
             }
         }
+    }
+
+    private void Start()
+    {
+        SetAiTurn(false);
     }
 
     private void FieldUpdatedHandler()
@@ -41,21 +50,43 @@ public class FieldView : MonoBehaviour
         cellView.UpdateState(cell);
     }
 
+    private void SetAiTurn(bool isTurn)
+    {
+        _isAiTurn = isTurn;
+    }
+
     private void CellUpdatedHandler(int x, int y)
     {
         UpdateCellView(x, y);
     }
 
-    private void CellViewClickedHandler(int x, int y)
+    private async void CellViewClickedHandler(int x, int y)
     {
-        if (_gameplayController.Field[x, y].IsEmpty && _gameplayController.GameResult == GameResult.None)
-            _gameplayController.MakeTurn(x, y);
+        if (_isAiTurn) return;
+        
+        if (!_gameplayController.Field[x, y].IsEmpty || _gameplayController.GameResult != GameResult.None) return;
+        
+        _gameplayController.MakeTurn(x, y);
+
+        SetAiTurn(true);
+
+        if (_gameplayController.GameResult != GameResult.None) return;
+        
+        await _gameplayController.MakeAiTurn();
+
+        SetAiTurn(false);
+    }
+
+    private void GameRestartedHandler()
+    {
+        SetAiTurn(false);
     }
 
     private void OnEnable()
     {
         _gameplayController.FieldUpdated += FieldUpdatedHandler;   
         _gameplayController.CellUpdated += CellUpdatedHandler;
+        _gameplayController.GameRestarted += GameRestartedHandler;
 
         foreach (var cellView in _cellViews)
         {
@@ -67,6 +98,7 @@ public class FieldView : MonoBehaviour
     {
         _gameplayController.FieldUpdated -= FieldUpdatedHandler;   
         _gameplayController.CellUpdated -= CellUpdatedHandler;
+        _gameplayController.GameRestarted -= GameRestartedHandler;
         
         foreach (var cellView in _cellViews)
         {

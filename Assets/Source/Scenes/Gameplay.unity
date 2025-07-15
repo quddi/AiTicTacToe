@@ -573,6 +573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ee6292d2b2b4d61a32669d53063a821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rightTeamId: GPT Team Data
   _defaultColor: {r: 0.49803925, g: 0.49803925, b: 0.44705886, a: 1}
   _winningColor: {r: 0.54901963, g: 0.7764706, b: 0.24705882, a: 1}
   _drawColor: {r: 0.5411765, g: 0.39607844, b: 0.24313726, a: 1}
@@ -1762,6 +1763,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47621c548b00421fbceeb293567c1652, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _firstPlayerTeam: Player Team Data
   _gameRules:
     rid: 4142873074869731328
   references:

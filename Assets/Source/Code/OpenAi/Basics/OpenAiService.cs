@@ -19,7 +19,7 @@ public class OpenAiService : IOpenAiService
     {
         var messages = new[]
         {
-            new Message("system", "Ти граєш у хрестики-нулики 4x4. Твоя задача — обрати наступний хід."),
+            new Message("system", "Ти граєш у хрестики-нулики 4x4. Твоя задача — обрати наступний хід. Грай на перемогу"),
             new Message("user", userInput)
         };
 
@@ -57,7 +57,6 @@ public class OpenAiService : IOpenAiService
         if (request.result == UnityWebRequest.Result.Success)
         {
             var resultJson = request.downloadHandler.text;
-            Debug.Log(resultJson);
             
             var response = JsonConvert.DeserializeObject<ChatResponse>(resultJson);
             

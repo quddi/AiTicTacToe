@@ -1,10 +1,16 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using VContainer;
+using Dropdown = TriInspector.DropdownAttribute;
 
 public class TurnView : MonoBehaviour
 {
+#if UNITY_EDITOR
+    [Dropdown(nameof(TeamsIds))]
+#endif
+    [SerializeField] private string _rightTeamId;
     [SerializeField] private Color _defaultColor;
     [SerializeField] private Color _winningColor;
     [SerializeField] private Color _drawColor;
@@ -63,11 +69,22 @@ public class TurnView : MonoBehaviour
     {
         _title.text = _gameplayController.GameResult == GameResult.None ? "Turn" : "Result";
     }
-    
+
+    private void UpdateWaiting()
+    {
+        var gameEnded = _gameplayController.GameResult != GameResult.None;
+
+        Debug.Log($"{!gameEnded} && {_gameplayController.CurrentTurnTeam == _rightTeamId}");
+        
+        _waitingAnimation.SetActive(!gameEnded && _gameplayController.CurrentTurnTeam == _rightTeamId);
+        _restartButton.gameObject.SetActive(gameEnded);
+    }
+
     private void TurnPassedHandler()
     {
         UpdateTeamIcon();
         UpdateTitle();
+        UpdateWaiting();
     }
 
     private void FieldUpdatedHandler()
@@ -76,14 +93,6 @@ public class TurnView : MonoBehaviour
         UpdateTeamIcon();
         UpdateTitle();
         UpdateWaiting();
-    }
-
-    private void UpdateWaiting()
-    {
-        var gameEnded = _gameplayController.GameResult != GameResult.None;
-        
-        _waitingAnimation.SetActive(!gameEnded);
-        _restartButton.gameObject.SetActive(gameEnded);
     }
 
     private void RestartButtonClickedHandler()
@@ -104,4 +113,8 @@ public class TurnView : MonoBehaviour
         _gameplayController.FieldUpdated -= FieldUpdatedHandler;
         _restartButton.onClick.RemoveListener(RestartButtonClickedHandler);
     }
+    
+#if UNITY_EDITOR
+    private IEnumerable<string> TeamsIds => TeamsConfig.TeamsIds;
+#endif
 }

@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Text;
+using Cysharp.Threading.Tasks;
 using TriInspector;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -7,23 +9,31 @@ using VContainer;
 
 public class GameplayController : MonoBehaviour
 {
+#if UNITY_EDITOR
+    [Dropdown(nameof(TeamsIds))]
+#endif
+    [SerializeField] private string _firstPlayerTeam;
     [SerializeReference] private IGameRules _gameRules;
     
     private ITeamsService _teamsService;
     private IResultsManager _resultsManager;
+    private IOpenAiService _openAiService;
+    
     private List<string> _turnsLoop;
 
-    public GameResult GameResult { get; private set; }
-    public string CurrentTurnTeam { get; private set; }
+    [field: SerializeField, ReadOnly] public string CurrentTurnTeam { get; private set; }
+    [field: SerializeField, ReadOnly] public GameResult GameResult { get; private set; }
     public FieldCell[,] Field { get; private set; }
     
     public event Action FieldUpdated;
     public event Action TurnPassed;
+    public event Action GameRestarted;
     public event Action<int, int> CellUpdated;
 
     [Inject]
-    private void Construct(ITeamsService teamsService, IResultsManager resultsManager)
+    private void Construct(ITeamsService teamsService, IResultsManager resultsManager, IOpenAiService openAiService)
     {
+        _openAiService = openAiService;
         _resultsManager = resultsManager;
         _teamsService = teamsService;
         _turnsLoop = _teamsService.TurnsLoop;
@@ -48,6 +58,7 @@ public class GameplayController : MonoBehaviour
         
         FieldUpdated?.Invoke();
         TurnPassed?.Invoke();
+        GameRestarted?.Invoke();
     }
 
     private void Start()
@@ -86,6 +97,18 @@ public class GameplayController : MonoBehaviour
             PassTurn();
     }
 
+    public async UniTask MakeAiTurn()
+    {
+        var prompt = BuildBoardPromptFromField(Field);
+        
+        var resultMove = await _openAiService.GetMoveAsync(prompt);
+        
+        if (resultMove == null)
+            throw new Exception("AI move is null");
+        
+        MakeTurn(resultMove.Value.x, resultMove.Value.y);
+    }
+
     [Button]
     private void SetCellState(int x, int y, string teamId, bool isWinning)
     {
@@ -94,4 +117,47 @@ public class GameplayController : MonoBehaviour
         
         CellUpdated?.Invoke(x, y);
     }
+    
+    public string BuildBoardPromptFromField(FieldCell[,] field)
+    {
+        var sb = new StringBuilder();
+
+        sb.AppendLine("Ось поточне поле (4x4), де X — твій хід, O — мій. Порожні клітинки — \".\":");
+
+        for (int row = 0; row < 4; row++)
+        {
+            for (int col = 0; col < 4; col++)
+            {
+                var cell = field[row, col];
+
+                char symbol;
+                if (cell.IsEmpty)
+                {
+                    symbol = '.';
+                }
+                else if (cell.TeamId == _firstPlayerTeam)
+                {
+                    symbol = 'X';
+                }
+                else
+                {
+                    symbol = 'O';
+                }
+
+                sb.Append(symbol);
+
+                if (col < 3) sb.Append(" ");
+            }
+            sb.AppendLine();
+        }
+
+        sb.AppendLine();
+        sb.AppendLine("Я граю за X. Зроби наступний хід. Відповідай у форматі function call (row, column).");
+
+        return sb.ToString();
+    }
+
+#if UNITY_EDITOR
+    private List<string> TeamsIds => TeamsConfig.TeamsIds;
+#endif
 }
