@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2ed567e6fa8424aa1f1212031434006, type: 3}
   m_Name: Open Ai config
   m_EditorClassIdentifier: 
-  <ApiKey>k__BackingField: 
+  <ApiKey>k__BackingField: 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
   <ApiUrl>k__BackingField: https://api.openai.com/v1/chat/completions
   <Model>k__BackingField: gpt-4o
   <ToolChoice>k__BackingField: required
