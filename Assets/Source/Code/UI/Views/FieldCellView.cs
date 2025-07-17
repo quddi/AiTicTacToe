@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.UIElements;
 using VContainer;
@@ -13,9 +14,11 @@ public class FieldCellView : MonoBehaviour
     [SerializeField] private Image _icon;
     [SerializeField] private Image _background;
     [SerializeField] private Button _button;
+    [SerializeField] private AsyncAnimation _markAnimation;
     
     private ITeamsService _teamsService;
     private FieldCell _cell;
+    private CancellationTokenSource _tokenSource;
 
     public event Action<int, int> Clicked; 
 
@@ -28,7 +31,8 @@ public class FieldCellView : MonoBehaviour
     public void UpdateState(FieldCell cell)
     {
         _cell = cell;
-        _icon.gameObject.SetActive(!cell.IsEmpty);
+        var isEmpty = !cell.IsEmpty;
+        _icon.gameObject.SetActive(isEmpty);
 
         if (cell.IsEmpty) _background.color = _emptyColor;
         else _background.color = cell.IsWinning ? _winningColor : _filledColor;
@@ -38,8 +42,25 @@ public class FieldCellView : MonoBehaviour
         var data = _teamsService.GetTeamData(cell.TeamId);
         
         _icon.sprite = data.Icon;
+        
+        if (isEmpty) PlayMarkAnimation();
+    }
+    
+    private void PlayMarkAnimation()
+    {
+        ValidateToken();
+        
+        _markAnimation.OrNull()?.Execute(_tokenSource.Token);
     }
 
+    private void ValidateToken()
+    {
+        _tokenSource?.Cancel();
+        _tokenSource?.Dispose();
+
+        _tokenSource = new();
+    }
+    
     private void ClickedHandler()
     {
         Clicked?.Invoke(_cell.X, _cell.Y );

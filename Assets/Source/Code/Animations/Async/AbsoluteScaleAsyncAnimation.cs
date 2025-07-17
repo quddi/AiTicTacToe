@@ -4,14 +4,14 @@ using UnityEngine.Serialization;
 
 public class AbsoluteScaleAsyncAnimation : TimedAsyncAnimation
 {
-    [FormerlySerializedAs("_animationCurves")] [SerializeReference] private EasingsVector3 _easingses = new();
-    [SerializeField] private List<Transform> _scaledTransforms = new();
+    [field: SerializeReference] public EasingsVector3 Easings { get; set; } = new();
+    [field: SerializeField] public List<Transform> ScaledTransforms { get; set; }= new();
     
     protected override void Evaluate(float t)
     {
-        foreach (var scaledTransform in _scaledTransforms)
+        foreach (var scaledTransform in ScaledTransforms)
         {
-            scaledTransform.localScale = _easingses.Evaluate(t);
+            scaledTransform.localScale = Easings.Evaluate(t);
         }
     }
 }

@@ -4,24 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4b4149c-6564-4fa6-b1ae-57c55a4ae73a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/Animations/Async/AbsoluteScaleAsyncAnimation.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/Animations/Async/AsyncAnimation.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/Animations/Async/TimedAsyncAnimation.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/Other/AnimationCurveEasing.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/Other/ConstantEasing.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/Other/DOTweenEasing.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/Other/EasingsVector3.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/Other/IEasing.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/Other/InverseEasing.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/UI/Views/WaitingAnimationView.cs" afterDir="false" />
+    <list default="true" id="a4b4149c-6564-4fa6-b1ae-57c55a4ae73a" name="Changes" comment="Waiting animation appearing">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AiTicTacToe/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AiTicTacToe/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Code/Gameplay/Controllers/GameplayController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Code/Gameplay/Controllers/GameplayController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Code/Other/Animations/TimedAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Code/Animations/Timed/TimedAnimation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Code/Other/Animations/WaitingCircleAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Code/Animations/Timed/WaitingCircleAnimation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Code/Animations/Async/AbsoluteScaleAsyncAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Code/Animations/Async/AbsoluteScaleAsyncAnimation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Code/Animations/Async/TimedAsyncAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Code/Animations/Async/TimedAsyncAnimation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Code/Other/ExtensionMethods.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Code/Other/ExtensionMethods.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Source/Code/UI/Views/FieldCellView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Code/UI/Views/FieldCellView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Code/UI/Views/FieldView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Code/UI/Views/FieldView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Code/UI/Views/TurnView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Code/UI/Views/TurnView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Source/Scenes/Gameplay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scenes/Gameplay.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -127,7 +115,7 @@
       <workItem from="1752599297199" duration="3699000" />
       <workItem from="1752603641895" duration="1071000" />
       <workItem from="1752695325343" duration="727000" />
-      <workItem from="1752775234135" duration="4132000" />
+      <workItem from="1752775234135" duration="5451000" />
     </task>
     <task id="LOCAL-00001" summary="Teams manager to service">
       <option name="closed" value="true" />
@@ -161,7 +149,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752776275930</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Waiting animation appearing">
+      <option name="closed" value="true" />
+      <created>1752779641001</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1752779641001</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,6 +173,7 @@
     <MESSAGE value="Open ai service" />
     <MESSAGE value="Receiving and parsing gpt answers" />
     <MESSAGE value="Fixed gpt response" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed gpt response" />
+    <MESSAGE value="Waiting animation appearing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Waiting animation appearing" />
   </component>
 </project>

@@ -5,8 +5,8 @@ using UnityEngine;
 
 public abstract class TimedAsyncAnimation : AsyncAnimation
 {
-    [SerializeField] private float _duration;
-    [SerializeField] private float _delay;
+    [field: SerializeField] public float Duration { get; set; }
+    [field: SerializeField] public float Delay { get; set; }
     
     public override async UniTask Execute(CancellationToken token)
     {
@@ -14,14 +14,14 @@ public abstract class TimedAsyncAnimation : AsyncAnimation
             
         var time = 0f;
 
-        if (_delay != 0) await UniTask.Delay(TimeSpan.FromSeconds(_delay), cancellationToken: token);
+        if (Delay != 0) await UniTask.Delay(TimeSpan.FromSeconds(Delay), cancellationToken: token);
             
         StartDefault();
         await StartAsync();
 
-        while (time < _duration)
+        while (time < Duration)
         {
-            Evaluate(time / _duration);
+            Evaluate(time / Duration);
 
             await UniTask.DelayFrame(1, cancellationToken: token);
 

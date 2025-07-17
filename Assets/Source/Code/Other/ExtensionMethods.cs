@@ -5,6 +5,11 @@ using UnityEngine;
 
 public static class ExtensionMethods
 {
+    public static T OrNull<T>(this T obj) where T : Object
+    {
+        return obj == null ? null : obj;
+    }
+    
 #if UNITY_EDITOR
     public static IEnumerable<T> GetAllScriptableObjects<T>() where T : ScriptableObject
     {
