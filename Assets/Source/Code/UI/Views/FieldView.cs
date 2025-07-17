@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class FieldView : MonoBehaviour
 {
-
     [SerializeField] private GameplayController _gameplayController;
     [SerializeField] private List<FieldCellView> _cellViews = new();
 

@@ -19,7 +19,7 @@ public class TurnView : MonoBehaviour
     [SerializeField] private Image _background;
     [SerializeField] private TMP_Text _title;
     [SerializeField] private Button _restartButton;
-    [SerializeField] private GameObject _waitingAnimation;
+    [SerializeField] private WaitingAnimationView _waitingAnimation;
     
     [SerializeField] private GameplayController _gameplayController;
     
@@ -74,7 +74,11 @@ public class TurnView : MonoBehaviour
     {
         var gameEnded = _gameplayController.GameResult != GameResult.None;
 
-        _waitingAnimation.SetActive(!gameEnded && _gameplayController.CurrentTurnTeam == _rightTeamId);
+        var active = !gameEnded && _gameplayController.CurrentTurnTeam == _rightTeamId;
+        
+        if (active) _waitingAnimation.Appear();
+        else _waitingAnimation.Disappear();
+        
         _restartButton.gameObject.SetActive(gameEnded);
     }
 

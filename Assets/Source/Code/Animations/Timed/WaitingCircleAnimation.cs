@@ -1,3 +1,5 @@
+using System;
+using System.Threading;
 using UnityEngine;
 
 public class WaitingCircleAnimation : TimedAnimation

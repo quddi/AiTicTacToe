@@ -582,7 +582,7 @@ MonoBehaviour:
   _background: {fileID: 431569764}
   _title: {fileID: 955110289}
   _restartButton: {fileID: 1950574718}
-  _waitingAnimation: {fileID: 2020819822}
+  _waitingAnimation: {fileID: 2020819828}
   _gameplayController: {fileID: 1176429918}
 --- !u!1 &451305772
 GameObject:
@@ -1766,6 +1766,8 @@ MonoBehaviour:
   _firstPlayerTeam: Player Team Data
   _gameRules:
     rid: 4142873074869731328
+  <CurrentTurnTeam>k__BackingField: 
+  <GameResult>k__BackingField: 0
   references:
     version: 2
     RefIds:
@@ -3495,6 +3497,9 @@ GameObject:
   - component: {fileID: 2020819823}
   - component: {fileID: 2020819825}
   - component: {fileID: 2020819824}
+  - component: {fileID: 2020819828}
+  - component: {fileID: 2020819827}
+  - component: {fileID: 2020819826}
   m_Layer: 5
   m_Name: WaitingBackground
   m_TagString: Untagged
@@ -3560,6 +3565,122 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2020819822}
   m_CullTransparentMesh: 1
+--- !u!114 &2020819826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020819822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7580e617996f4e2e8cee256c28b43db1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _duration: 0.2
+  _delay: 0
+  _easingses:
+    rid: 4142873354805444617
+  _scaledTransforms:
+  - {fileID: 2020819823}
+  references:
+    version: 2
+    RefIds:
+    - rid: 4142873354805444617
+      type: {class: EasingsVector3, ns: , asm: Assembly-CSharp}
+      data:
+        <X>k__BackingField:
+          rid: 4142873354805444621
+        <Y>k__BackingField:
+          rid: 4142873354805444623
+        <Z>k__BackingField:
+          rid: 4142873354805444620
+    - rid: 4142873354805444620
+      type: {class: ConstantEasing, ns: , asm: Assembly-CSharp}
+      data:
+        _value: 1
+    - rid: 4142873354805444621
+      type: {class: InverseEasing, ns: , asm: Assembly-CSharp}
+      data:
+        _easing:
+          rid: 4142873354805444622
+    - rid: 4142873354805444622
+      type: {class: DOTweenEasing, ns: , asm: Assembly-CSharp}
+      data:
+        _easeType: 9
+        _overshootOrApmlitude: 0
+        _period: 0
+    - rid: 4142873354805444623
+      type: {class: InverseEasing, ns: , asm: Assembly-CSharp}
+      data:
+        _easing:
+          rid: 4142873354805444624
+    - rid: 4142873354805444624
+      type: {class: DOTweenEasing, ns: , asm: Assembly-CSharp}
+      data:
+        _easeType: 9
+        _overshootOrApmlitude: 0
+        _period: 0
+--- !u!114 &2020819827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020819822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7580e617996f4e2e8cee256c28b43db1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _duration: 0.2
+  _delay: 0
+  _easingses:
+    rid: 4142873354805444610
+  _scaledTransforms:
+  - {fileID: 2020819823}
+  references:
+    version: 2
+    RefIds:
+    - rid: 4142873354805444610
+      type: {class: EasingsVector3, ns: , asm: Assembly-CSharp}
+      data:
+        <X>k__BackingField:
+          rid: 4142873354805444612
+        <Y>k__BackingField:
+          rid: 4142873354805444614
+        <Z>k__BackingField:
+          rid: 4142873354805444616
+    - rid: 4142873354805444612
+      type: {class: DOTweenEasing, ns: , asm: Assembly-CSharp}
+      data:
+        _easeType: 9
+        _overshootOrApmlitude: 0
+        _period: 0
+    - rid: 4142873354805444614
+      type: {class: DOTweenEasing, ns: , asm: Assembly-CSharp}
+      data:
+        _easeType: 9
+        _overshootOrApmlitude: 0
+        _period: 0
+    - rid: 4142873354805444616
+      type: {class: ConstantEasing, ns: , asm: Assembly-CSharp}
+      data:
+        _value: 1
+--- !u!114 &2020819828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020819822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e480dee8a9e47e9a61463560f4296ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _appearAnimation: {fileID: 2020819827}
+  _disappearAnimation: {fileID: 2020819826}
 --- !u!1001 &2115969318
 PrefabInstance:
   m_ObjectHideFlags: 0

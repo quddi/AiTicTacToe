@@ -42,7 +42,7 @@ public class FieldCellView : MonoBehaviour
 
     private void ClickedHandler()
     {
-        Clicked?.Invoke(_cell.X, _cell.Y);
+        Clicked?.Invoke(_cell.X, _cell.Y );
     }
 
     private void OnEnable()

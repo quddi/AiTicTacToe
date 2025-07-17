@@ -102,7 +102,7 @@ public class GameplayController : MonoBehaviour
     {
         var prompt = BuildBoardPromptFromField(Field);
 
-        Debug.LogAssertion(prompt);
+        Debug.LogWarning(prompt);
 
         Vector2Int? resultMove = null;
 
