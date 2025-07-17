@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Text;
 using Cysharp.Threading.Tasks;
 using Newtonsoft.Json;
@@ -9,12 +10,14 @@ public class OpenAiService : IOpenAiService
 {
     private OpenAiConfig _config;
 
+    public int ReTriesCount => _config.ReTriesCount;
+
     [Inject]
     private void Construct(OpenAiConfig openAiConfig)
     {
         _config = openAiConfig;
     }
-    
+
     public async UniTask<Vector2Int?> GetMoveAsync(string userInput)
     {
         var messages = new[]

@@ -74,8 +74,6 @@ public class TurnView : MonoBehaviour
     {
         var gameEnded = _gameplayController.GameResult != GameResult.None;
 
-        Debug.Log($"{!gameEnded} && {_gameplayController.CurrentTurnTeam == _rightTeamId}");
-        
         _waitingAnimation.SetActive(!gameEnded && _gameplayController.CurrentTurnTeam == _rightTeamId);
         _restartButton.gameObject.SetActive(gameEnded);
     }

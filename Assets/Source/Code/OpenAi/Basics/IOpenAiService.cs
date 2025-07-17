@@ -3,5 +3,7 @@ using UnityEngine;
 
 public interface IOpenAiService
 {
+    int ReTriesCount { get; }
+    
     UniTask<Vector2Int?> GetMoveAsync(string userInput);
 }

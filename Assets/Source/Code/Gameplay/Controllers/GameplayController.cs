@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 using Cysharp.Threading.Tasks;
 using TriInspector;
 using UnityEngine;
@@ -100,11 +101,26 @@ public class GameplayController : MonoBehaviour
     public async UniTask MakeAiTurn()
     {
         var prompt = BuildBoardPromptFromField(Field);
+
+        Debug.LogAssertion(prompt);
+
+        Vector2Int? resultMove = null;
+
+        for (int i = 0; i < _openAiService.ReTriesCount; i++)
+        {
+            resultMove = await _openAiService.GetMoveAsync(prompt);
         
-        var resultMove = await _openAiService.GetMoveAsync(prompt);
+            if (resultMove == null)
+                throw new Exception("AI move is null");
+
+            if (Field[resultMove.Value.x, resultMove.Value.y].IsEmpty)
+                break;
+            else
+                prompt += $" Клітинка ({resultMove.Value.x}, {resultMove.Value.y}) занята, не обирай її.";
+        }
         
-        if (resultMove == null)
-            throw new Exception("AI move is null");
+        if (!Field[resultMove!.Value.x, resultMove.Value!.y].IsEmpty) 
+            throw new Exception($"AI move is bad! ({resultMove.Value.x}, {resultMove.Value.y})");
         
         MakeTurn(resultMove.Value.x, resultMove.Value.y);
     }
@@ -124,6 +140,8 @@ public class GameplayController : MonoBehaviour
 
         sb.AppendLine("Ось поточне поле (4x4), де X — твій хід, O — мій. Порожні клітинки — \".\":");
 
+        var availableMoves = new HashSet<Vector2Int>();
+
         for (int row = 0; row < 4; row++)
         {
             for (int col = 0; col < 4; col++)
@@ -134,6 +152,7 @@ public class GameplayController : MonoBehaviour
                 if (cell.IsEmpty)
                 {
                     symbol = '.';
+                    availableMoves.Add(new Vector2Int { x = row, y = col });
                 }
                 else if (cell.TeamId == _firstPlayerTeam)
                 {
@@ -152,9 +171,15 @@ public class GameplayController : MonoBehaviour
         }
 
         sb.AppendLine();
-        sb.AppendLine("Я граю за X. Зроби наступний хід. Відповідай у форматі function call (row, column).");
+        sb.AppendLine($"Я граю за X. Зроби наступний хід, максимально намагайся виграти, обери лише з доступних варіантів: {ToString(availableMoves)}. " +
+                      $"Відповідай у форматі function call (row, column).");
 
         return sb.ToString();
+    }
+
+    private string ToString(HashSet<Vector2Int> availableMoves)
+    {
+        return string.Join(", ", availableMoves.Select(x => $"({x.x}, {x.y})"));
     }
 
 #if UNITY_EDITOR
