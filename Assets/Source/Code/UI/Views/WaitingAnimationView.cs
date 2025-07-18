@@ -1,5 +1,6 @@
 using System;
 using System.Threading;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 public class WaitingAnimationView : MonoBehaviour
@@ -26,7 +27,7 @@ public class WaitingAnimationView : MonoBehaviour
         
         ValidateToken();
 
-        _appearAnimation.Execute(_tokenSource.Token);
+        _appearAnimation.Execute(_tokenSource.Token).Forget();
     }
 
     public void Disappear()
@@ -37,7 +38,7 @@ public class WaitingAnimationView : MonoBehaviour
         
         ValidateToken();
 
-        _disappearAnimation.Execute(_tokenSource.Token);
+        _disappearAnimation.Execute(_tokenSource.Token).Forget();
     }
 
     private void ValidateToken()

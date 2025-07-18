@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4b4149c-6564-4fa6-b1ae-57c55a4ae73a" name="Changes" comment="Waiting animation appearing">
+    <list default="true" id="a4b4149c-6564-4fa6-b1ae-57c55a4ae73a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/Animations/Async/ImageColorLerpAsyncAnimation.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AiTicTacToe/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AiTicTacToe/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Code/Animations/Async/AbsoluteScaleAsyncAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Code/Animations/Async/AbsoluteScaleAsyncAnimation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Code/Animations/Async/TimedAsyncAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Code/Animations/Async/TimedAsyncAnimation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Code/Other/ExtensionMethods.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Code/Other/ExtensionMethods.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Source/Code/UI/Views/FieldCellView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Code/UI/Views/FieldCellView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Scenes/Gameplay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scenes/Gameplay.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Code/UI/Views/WaitingAnimationView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Code/UI/Views/WaitingAnimationView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Prefabs/UI/FieldCell.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Prefabs/UI/FieldCell.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +21,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ce006d9cdd7f42a88f73d37c00d20828c400/df/4323abcd/UnityWebRequest.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/UnityProjects/Pet/AiTicTacToe/Assets/Source/Code/Animations/Async/AbsoluteScaleAsyncAnimation.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Source/Code/OpenAi/Specifics/Tool.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Source/Code/OpenAi/Specifics/Usage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.srcnalt.openai-unity@054467e2a2/Runtime/DataTypes.cs" root0="SKIP_HIGHLIGHTING" />
@@ -115,7 +115,8 @@
       <workItem from="1752599297199" duration="3699000" />
       <workItem from="1752603641895" duration="1071000" />
       <workItem from="1752695325343" duration="727000" />
-      <workItem from="1752775234135" duration="5451000" />
+      <workItem from="1752775234135" duration="6195000" />
+      <workItem from="1752842803138" duration="2730000" />
     </task>
     <task id="LOCAL-00001" summary="Teams manager to service">
       <option name="closed" value="true" />
@@ -157,7 +158,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752779641001</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Public animations">
+      <option name="closed" value="true" />
+      <created>1752781820850</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1752781820850</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,6 +183,7 @@
     <MESSAGE value="Receiving and parsing gpt answers" />
     <MESSAGE value="Fixed gpt response" />
     <MESSAGE value="Waiting animation appearing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Waiting animation appearing" />
+    <MESSAGE value="Public animations" />
+    <option name="LAST_COMMIT_MESSAGE" value="Public animations" />
   </component>
 </project>

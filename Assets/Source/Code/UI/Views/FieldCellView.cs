@@ -1,5 +1,6 @@
 using System;
 using System.Threading;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UIElements;
 using VContainer;
@@ -14,11 +15,13 @@ public class FieldCellView : MonoBehaviour
     [SerializeField] private Image _icon;
     [SerializeField] private Image _background;
     [SerializeField] private Button _button;
-    [SerializeField] private AsyncAnimation _markAnimation;
+    [SerializeField] private ImageColorLerpAsyncAnimation _colorAnimation;
+    [SerializeField] private AbsoluteScaleAsyncAnimation _scaleAnimation;
     
     private ITeamsService _teamsService;
     private FieldCell _cell;
     private CancellationTokenSource _tokenSource;
+    private bool _wasEmpty;
 
     public event Action<int, int> Clicked; 
 
@@ -31,26 +34,40 @@ public class FieldCellView : MonoBehaviour
     public void UpdateState(FieldCell cell)
     {
         _cell = cell;
-        var isEmpty = !cell.IsEmpty;
-        _icon.gameObject.SetActive(isEmpty);
 
-        if (cell.IsEmpty) _background.color = _emptyColor;
-        else _background.color = cell.IsWinning ? _winningColor : _filledColor;
-        
-        if (cell.IsEmpty) return;
+        _icon.gameObject.SetActive(!cell.IsEmpty);
+
+        PlayMarkAnimation(cell.IsEmpty ? _emptyColor : cell.IsWinning ? _winningColor : _filledColor);
+
+        if (cell.IsEmpty)
+        {
+            foreach (var scaledTransform in _scaleAnimation.ScaledTransforms)
+            {
+                scaledTransform.localScale = Vector3.zero;
+            }
+
+            _wasEmpty = true;
+            
+            return;
+        }
         
         var data = _teamsService.GetTeamData(cell.TeamId);
         
         _icon.sprite = data.Icon;
-        
-        if (isEmpty) PlayMarkAnimation();
+
+        if (_wasEmpty) _scaleAnimation.Execute(_tokenSource.Token).Forget();
+
+        _wasEmpty = false;
     }
     
-    private void PlayMarkAnimation()
+    private void PlayMarkAnimation(Color resultColor)
     {
         ValidateToken();
+
+        _colorAnimation.StartColor = _background.color;
+        _colorAnimation.EndColor = resultColor;
         
-        _markAnimation.OrNull()?.Execute(_tokenSource.Token);
+        _colorAnimation.OrNull()?.Execute(_tokenSource.Token).Forget();
     }
 
     private void ValidateToken()

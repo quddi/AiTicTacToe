@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7367252148696883993}
   - component: {fileID: -6191246008210536056}
+  - component: {fileID: 5150772196720828920}
+  - component: {fileID: 3009329971184652248}
   - component: {fileID: 4810396437263070759}
   - component: {fileID: 4327572160057521152}
   - component: {fileID: 3129199456565638410}
@@ -58,6 +60,168 @@ MonoBehaviour:
   _icon: {fileID: 6595250007001989165}
   _background: {fileID: 4327572160057521152}
   _button: {fileID: 3129199456565638410}
+  _colorAnimation: {fileID: 5150772196720828920}
+  _scaleAnimation: {fileID: 3009329971184652248}
+--- !u!114 &5150772196720828920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1634027668049021535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 341457145099416c9cf56b2c73afa102, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Duration>k__BackingField: 0.25
+  <Delay>k__BackingField: 0
+  <StartColor>k__BackingField: {r: 0, g: 0, b: 0, a: 0}
+  <EndColor>k__BackingField: {r: 0, g: 0, b: 0, a: 0}
+  <Easings>k__BackingField:
+    rid: 4142873354805444639
+  <Image>k__BackingField: {fileID: 4327572160057521152}
+  references:
+    version: 2
+    RefIds:
+    - rid: 4142873354805444639
+      type: {class: EasingsVector3, ns: , asm: Assembly-CSharp}
+      data:
+        <X>k__BackingField:
+          rid: 4142873354805444640
+        <Y>k__BackingField:
+          rid: 4142873354805444641
+        <Z>k__BackingField:
+          rid: 4142873354805444642
+    - rid: 4142873354805444640
+      type: {class: AnimationCurveEasing, ns: , asm: Assembly-CSharp}
+      data:
+        _curve:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 2
+            outSlope: 2
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+    - rid: 4142873354805444641
+      type: {class: AnimationCurveEasing, ns: , asm: Assembly-CSharp}
+      data:
+        _curve:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 2
+            outSlope: 2
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+    - rid: 4142873354805444642
+      type: {class: AnimationCurveEasing, ns: , asm: Assembly-CSharp}
+      data:
+        _curve:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 2
+            outSlope: 2
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+--- !u!114 &3009329971184652248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1634027668049021535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7580e617996f4e2e8cee256c28b43db1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Duration>k__BackingField: 0.25
+  <Delay>k__BackingField: 0
+  <Easings>k__BackingField:
+    rid: 4142873371995275264
+  <ScaledTransforms>k__BackingField:
+  - {fileID: 3709241963863619709}
+  references:
+    version: 2
+    RefIds:
+    - rid: 4142873371995275264
+      type: {class: EasingsVector3, ns: , asm: Assembly-CSharp}
+      data:
+        <X>k__BackingField:
+          rid: 4142873371995275265
+        <Y>k__BackingField:
+          rid: 4142873371995275266
+        <Z>k__BackingField:
+          rid: 4142873371995275267
+    - rid: 4142873371995275265
+      type: {class: DOTweenEasing, ns: , asm: Assembly-CSharp}
+      data:
+        _easeType: 8
+        _overshootOrApmlitude: 0
+        _period: 0
+    - rid: 4142873371995275266
+      type: {class: DOTweenEasing, ns: , asm: Assembly-CSharp}
+      data:
+        _easeType: 8
+        _overshootOrApmlitude: 0
+        _period: 0
+    - rid: 4142873371995275267
+      type: {class: DOTweenEasing, ns: , asm: Assembly-CSharp}
+      data:
+        _easeType: 8
+        _overshootOrApmlitude: 0
+        _period: 0
 --- !u!222 &4810396437263070759
 CanvasRenderer:
   m_ObjectHideFlags: 0
