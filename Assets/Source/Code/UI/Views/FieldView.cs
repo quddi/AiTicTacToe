@@ -52,6 +52,11 @@ public class FieldView : MonoBehaviour
     private void SetAiTurn(bool isTurn)
     {
         _isAiTurn = isTurn;
+
+        foreach (var cellView in _cellViews)
+        {
+            cellView.PointerAnimation.IsInteractable = !_isAiTurn;
+        }
     }
 
     private void CellUpdatedHandler(int x, int y)

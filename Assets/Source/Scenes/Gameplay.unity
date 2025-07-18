@@ -491,6 +491,8 @@ GameObject:
   m_Component:
   - component: {fileID: 431569763}
   - component: {fileID: 431569766}
+  - component: {fileID: 431569768}
+  - component: {fileID: 431569767}
   - component: {fileID: 431569765}
   - component: {fileID: 431569764}
   m_Layer: 5
@@ -583,7 +585,120 @@ MonoBehaviour:
   _title: {fileID: 955110289}
   _restartButton: {fileID: 1950574718}
   _waitingAnimation: {fileID: 2020819828}
+  _appearAnimation: {fileID: 431569768}
+  _disappearAnimation: {fileID: 431569767}
   _gameplayController: {fileID: 1176429918}
+--- !u!114 &431569767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431569762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7580e617996f4e2e8cee256c28b43db1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Duration>k__BackingField: 0.3
+  <Delay>k__BackingField: 0
+  <Easings>k__BackingField:
+    rid: 4142873371995275290
+  <ScaledTransforms>k__BackingField:
+  - {fileID: 623710306}
+  references:
+    version: 2
+    RefIds:
+    - rid: 4142873371995275290
+      type: {class: EasingsVector3, ns: , asm: Assembly-CSharp}
+      data:
+        <X>k__BackingField:
+          rid: 4142873371995275291
+        <Y>k__BackingField:
+          rid: 4142873371995275292
+        <Z>k__BackingField:
+          rid: 4142873371995275293
+    - rid: 4142873371995275291
+      type: {class: InverseEasing, ns: , asm: Assembly-CSharp}
+      data:
+        _easing:
+          rid: 4142873371995275294
+    - rid: 4142873371995275292
+      type: {class: InverseEasing, ns: , asm: Assembly-CSharp}
+      data:
+        _easing:
+          rid: 4142873371995275295
+    - rid: 4142873371995275293
+      type: {class: InverseEasing, ns: , asm: Assembly-CSharp}
+      data:
+        _easing:
+          rid: 4142873371995275296
+    - rid: 4142873371995275294
+      type: {class: DOTweenEasing, ns: , asm: Assembly-CSharp}
+      data:
+        _easeType: 8
+        _overshootOrApmlitude: 0
+        _period: 0
+    - rid: 4142873371995275295
+      type: {class: DOTweenEasing, ns: , asm: Assembly-CSharp}
+      data:
+        _easeType: 8
+        _overshootOrApmlitude: 0
+        _period: 0
+    - rid: 4142873371995275296
+      type: {class: DOTweenEasing, ns: , asm: Assembly-CSharp}
+      data:
+        _easeType: 8
+        _overshootOrApmlitude: 0
+        _period: 0
+--- !u!114 &431569768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431569762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7580e617996f4e2e8cee256c28b43db1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Duration>k__BackingField: 0.3
+  <Delay>k__BackingField: 0
+  <Easings>k__BackingField:
+    rid: 4142873371995275285
+  <ScaledTransforms>k__BackingField:
+  - {fileID: 623710306}
+  references:
+    version: 2
+    RefIds:
+    - rid: 4142873371995275285
+      type: {class: EasingsVector3, ns: , asm: Assembly-CSharp}
+      data:
+        <X>k__BackingField:
+          rid: 4142873371995275287
+        <Y>k__BackingField:
+          rid: 4142873371995275288
+        <Z>k__BackingField:
+          rid: 4142873371995275289
+    - rid: 4142873371995275287
+      type: {class: DOTweenEasing, ns: , asm: Assembly-CSharp}
+      data:
+        _easeType: 8
+        _overshootOrApmlitude: 0
+        _period: 0
+    - rid: 4142873371995275288
+      type: {class: DOTweenEasing, ns: , asm: Assembly-CSharp}
+      data:
+        _easeType: 8
+        _overshootOrApmlitude: 0
+        _period: 0
+    - rid: 4142873371995275289
+      type: {class: DOTweenEasing, ns: , asm: Assembly-CSharp}
+      data:
+        _easeType: 8
+        _overshootOrApmlitude: 0
+        _period: 0
 --- !u!1 &451305772
 GameObject:
   m_ObjectHideFlags: 0
@@ -3272,6 +3387,7 @@ GameObject:
   - component: {fileID: 1950574720}
   - component: {fileID: 1950574719}
   - component: {fileID: 1950574718}
+  - component: {fileID: 1950574721}
   m_Layer: 5
   m_Name: RestartButton
   m_TagString: Untagged
@@ -3380,6 +3496,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1950574716}
   m_CullTransparentMesh: 1
+--- !u!114 &1950574721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1950574716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83ce7da559a645c380c0007fc5d6cf59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scaleDuration: 0.1
+  _defaultScale: {x: 1, y: 1, z: 1}
+  _targetScale: {x: 0.8, y: 0.8, z: 0.8}
+  _scaleCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  <IsInteractable>k__BackingField: 1
 --- !u!1001 &2013918042
 PrefabInstance:
   m_ObjectHideFlags: 0

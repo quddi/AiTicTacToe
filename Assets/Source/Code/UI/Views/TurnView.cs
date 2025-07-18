@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Threading;
+using Cysharp.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,10 +22,13 @@ public class TurnView : MonoBehaviour
     [SerializeField] private TMP_Text _title;
     [SerializeField] private Button _restartButton;
     [SerializeField] private WaitingAnimationView _waitingAnimation;
+    [SerializeField] private AsyncAnimation _appearAnimation;
+    [SerializeField] private AsyncAnimation _disappearAnimation;
     
     [SerializeField] private GameplayController _gameplayController;
     
     private ITeamsService _teamsService;
+    private CancellationTokenSource _tokenSource;
 
     [Inject]
     private void Construct(ITeamsService teamsService)
@@ -33,23 +38,32 @@ public class TurnView : MonoBehaviour
 
     private void Start()
     {
-        UpdateTeamIcon();
+        UpdateTeamIcon().Forget();
         UpdateBackgroundColor();
         UpdateTitle();
         UpdateWaiting();
     }
 
-    private void UpdateTeamIcon()
+    private async UniTaskVoid UpdateTeamIcon()
     {
+        ValidateToken();
+        
+        await _disappearAnimation.Execute(_tokenSource.Token);
+        
         if (_gameplayController.GameResult == GameResult.Draw)
         {
             _teamIcon.sprite = _drawIcon;
+            
+            await _appearAnimation.Execute(_tokenSource.Token);
+            
             return;
         }
         
         var data = _teamsService.GetTeamData(_gameplayController.CurrentTurnTeam);
         
         _teamIcon.sprite = data.Icon;
+        
+        await _appearAnimation.Execute(_tokenSource.Token);
     }
 
     private void UpdateBackgroundColor()
@@ -82,9 +96,17 @@ public class TurnView : MonoBehaviour
         _restartButton.gameObject.SetActive(gameEnded);
     }
 
+    private void ValidateToken()
+    {
+        _tokenSource?.Cancel();
+        _tokenSource?.Dispose();
+        
+        _tokenSource = new();
+    }
+
     private void TurnPassedHandler()
     {
-        UpdateTeamIcon();
+        UpdateTeamIcon().Forget();
         UpdateTitle();
         UpdateWaiting();
     }
@@ -92,7 +114,7 @@ public class TurnView : MonoBehaviour
     private void FieldUpdatedHandler()
     {
         UpdateBackgroundColor();
-        UpdateTeamIcon();
+        UpdateTeamIcon().Forget();
         UpdateTitle();
         UpdateWaiting();
     }

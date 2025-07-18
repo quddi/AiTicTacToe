@@ -18,6 +18,8 @@ public class FieldCellView : MonoBehaviour
     [SerializeField] private ImageColorLerpAsyncAnimation _colorAnimation;
     [SerializeField] private AbsoluteScaleAsyncAnimation _scaleAnimation;
     
+    [field: SerializeField] public PointerAnimation PointerAnimation { get; set; }
+    
     private ITeamsService _teamsService;
     private FieldCell _cell;
     private CancellationTokenSource _tokenSource;

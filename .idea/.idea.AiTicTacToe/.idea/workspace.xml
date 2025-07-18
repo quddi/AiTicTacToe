@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a4b4149c-6564-4fa6-b1ae-57c55a4ae73a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/Animations/Async/ImageColorLerpAsyncAnimation.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Source/Code/Animations/PointerAnimation.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AiTicTacToe/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AiTicTacToe/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Source/Code/UI/Views/FieldCellView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Code/UI/Views/FieldCellView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Code/UI/Views/WaitingAnimationView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Code/UI/Views/WaitingAnimationView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Code/UI/Views/FieldView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Code/UI/Views/FieldView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Code/UI/Views/TurnView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Code/UI/Views/TurnView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Source/Prefabs/UI/FieldCell.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Prefabs/UI/FieldCell.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Scenes/Gameplay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scenes/Gameplay.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +118,7 @@
       <workItem from="1752603641895" duration="1071000" />
       <workItem from="1752695325343" duration="727000" />
       <workItem from="1752775234135" duration="6195000" />
-      <workItem from="1752842803138" duration="2730000" />
+      <workItem from="1752842803138" duration="4972000" />
     </task>
     <task id="LOCAL-00001" summary="Teams manager to service">
       <option name="closed" value="true" />
